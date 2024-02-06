@@ -21,10 +21,7 @@
     <ProjectReference Include="..\americavirtualchallenge.client\americavirtualchallenge.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\AmericaVirtualChallenge.Data\AmericaVirtualChallenge.Data.csproj" />
   </ItemGroup>
 
 </Project>
