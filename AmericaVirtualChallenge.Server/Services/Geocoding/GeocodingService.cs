@@ -16,9 +16,9 @@ namespace AmericaVirtualChallenge.Server.Services.Geocoding
 
         }
 
-        public async Task<GeocodingResponse> GetCityCoordinates(string cityName)
+        public async Task<GeocodingResponse> GetCityCoordinates(string city, string country)
         {
-            string apiUrl = $"http://api.openweathermap.org/geo/1.0/direct?q={cityName}&limit=5&appid={_apiKey}";
+            string apiUrl = $"http://api.openweathermap.org/geo/1.0/direct?q={city},{country}&limit=5&appid={_apiKey}";
 
             var httpClient = new HttpClient();
 
@@ -26,7 +26,6 @@ namespace AmericaVirtualChallenge.Server.Services.Geocoding
 
             if (response.IsSuccessStatusCode)
             {
-                string country = "AR";
                 var jsonString = await response.Content.ReadAsStringAsync();
 
                 try
@@ -39,11 +38,11 @@ namespace AmericaVirtualChallenge.Server.Services.Geocoding
                             PropertyNameCaseInsensitive = true
                         });
 
-                    var city = cities.FirstOrDefault(c => c.Country == country);
+                    var cityName = cities?.FirstOrDefault(c => c.Country == country.ToUpper());
 
-                    if (city != null)
+                    if (cityName != null)
                     {
-                        return city;
+                        return cityName;
                     }
                     else
                     {

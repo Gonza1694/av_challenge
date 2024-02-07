@@ -18,8 +18,7 @@ namespace AmericaVirtualChallenge.Server.Services.Weather
 
         public async Task<WeatherResponse> GetWeatherByCoordinates(double lat, double lon)
         {
-            string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={_apiKey}&units=metric";
-
+            string apiUrl = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={_apiKey}&units=metric";
             var httpClient = new HttpClient();
 
             var response = await httpClient.GetAsync(apiUrl);

@@ -4,6 +4,6 @@ namespace AmericaVirtualChallenge.Server.Services.Geocoding
 {
     public interface IGeocodingService
     {
-        Task<GeocodingResponse> GetCityCoordinates(string cityName);
+        Task<GeocodingResponse> GetCityCoordinates(string city, string country);
     }
 }

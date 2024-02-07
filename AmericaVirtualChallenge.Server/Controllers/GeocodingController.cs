@@ -15,11 +15,11 @@ namespace AmericaVirtualChallenge.Server.Controllers
         }
 
         [HttpGet("getCityCoordinates")]
-        public async Task<ActionResult<object>> GetCityCoordinates(string city)
+        public async Task<ActionResult<object>> GetCityCoordinates(string city, string country)
         {
             try
             {
-                var cityCoordinates = await _geocodingService.GetCityCoordinates(city);
+                var cityCoordinates = await _geocodingService.GetCityCoordinates(city, country);
                 return Ok(cityCoordinates);
             }
             catch (Exception)

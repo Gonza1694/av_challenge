@@ -17,12 +17,12 @@ namespace AmericaVirtualChallenge.Server.Controllers
             _weatherService = weatherService;
         }
 
-        [HttpGet("getWeatherByCity")]
-        public async Task<IActionResult> GetWeatherByCity(string city)
+        [HttpGet("getWeather")]
+        public async Task<IActionResult> GetWeather(string city, string country)
         {
             try
             {
-                var cityCoordinates = await _geocodingService.GetCityCoordinates(city);
+                var cityCoordinates = await _geocodingService.GetCityCoordinates(city, country);
 
                 var weatherData = await _weatherService.GetWeatherByCoordinates(cityCoordinates.Lat, cityCoordinates.Lon);
 
