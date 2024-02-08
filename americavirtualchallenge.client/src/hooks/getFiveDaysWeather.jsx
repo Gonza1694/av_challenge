@@ -1,31 +1,36 @@
 import { useState, useEffect } from 'react';
+import weatherService from '../services/weatherService';
 
-const useGetFiveDaysWeather = () => {
+const useGetFiveDaysWeather = (city, country) => {
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`/data/fiveDays.json`);
-        if (!response.ok) {
-          throw new Error(`Error ${response.status}: ${response.statusText}`);
-        }
-        
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 500)
-      }
-    };
+    useEffect(() => {
 
-    fetchData();
-  }, []);
+        if (!city && !country) return
+
+        const fetchData = async () => {
+            try {
+
+                const data = await weatherService.fetchFiveDaysWeather(city, country);
+                setData(data);
+
+            } catch (error) {
+
+                setError(error.message);
+
+            } finally {
+
+                    setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [country, city]);
+
+
 
   return { data, loading, error };
 };
