@@ -2,19 +2,73 @@
   "countries": [
     {
       "name": "Argentina",
-      "cities": ["Buenos Aires", "Córdoba", "Rosario"]
+      "code": "AR",
+      "cities": [ "Buenos Aires", "Córdoba", "Tucumán" ]
     },
     {
       "name": "United States",
-      "cities": ["New York", "Los Angeles", "Chicago"]
+      "code": "US",
+      "cities": [ "New York", "Los Angeles", "Chicago" ]
     },
     {
       "name": "United Kingdom",
-      "cities": ["London", "Manchester", "Edinburgh"]
+      "code": "UK",
+      "cities": [ "London", "Manchester", "Edinburgh" ]
     },
     {
       "name": "Japan",
-      "cities": ["Tokyo", "Osaka", "Kyoto"]
+      "code": "JP",
+      "cities": [ "Tokyo", "Osaka", "Kyoto" ]
+    },
+    {
+      "name": "Canada",
+      "code": "CA",
+      "cities": [ "Toronto", "Vancouver", "Montreal" ]
+    },
+    {
+      "name": "France",
+      "code": "FR",
+      "cities": [ "Paris", "Marseille", "Lyon" ]
+    },
+    {
+      "name": "Germany",
+      "code": "DE",
+      "cities": [ "Berlin", "Munich", "Hamburg" ]
+    },
+    {
+      "name": "Australia",
+      "code": "AU",
+      "cities": [ "Sydney", "Melbourne", "Brisbane" ]
+    },
+    {
+      "name": "Brazil",
+      "code": "BR",
+      "cities": [ "Sao Paulo", "Rio de Janeiro", "Brasilia" ]
+    },
+    {
+      "name": "China",
+      "code": "CN",
+      "cities": [ "Beijing", "Shanghai", "Guangzhou" ]
+    },
+    {
+      "name": "India",
+      "code": "IN",
+      "cities": [ "New Delhi", "Mumbai", "Bangalore" ]
+    },
+    {
+      "name": "Mexico",
+      "code": "MX",
+      "cities": [ "Mexico City", "Guadalajara", "Monterrey" ]
+    },
+    {
+      "name": "Italy",
+      "code": "IT",
+      "cities": [ "Rome", "Milan", "Venice" ]
+    },
+    {
+      "name": "Spain",
+      "code": "ES",
+      "cities": [ "Madrid", "Barcelona", "Valencia" ]
     }
   ]
 }
