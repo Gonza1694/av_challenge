@@ -1,5 +1,4 @@
-﻿using AmericaVirtualChallenge.Server.Services.Geocoding;
-using AmericaVirtualChallenge.Server.Services.Weather;
+﻿using AmericaVirtualChallenge.Server.Services.Weather;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AmericaVirtualChallenge.Server.Controllers
@@ -8,12 +7,10 @@ namespace AmericaVirtualChallenge.Server.Controllers
     [Route("api/[controller]")]
     public class WeatherController : ControllerBase
     {
-        private readonly IGeocodingService _geocodingService;
         private readonly IWeatherService _weatherService;
 
-        public WeatherController(IGeocodingService geocodingService, IWeatherService weatherService)
+        public WeatherController(IWeatherService weatherService)
         {
-            _geocodingService = geocodingService;
             _weatherService = weatherService;
         }
 
@@ -22,9 +19,7 @@ namespace AmericaVirtualChallenge.Server.Controllers
         {
             try
             {
-                var cityCoordinates = await _geocodingService.GetCityCoordinates(city, country);
-
-                var weatherData = await _weatherService.GetWeatherByCoordinates(cityCoordinates.Lat, cityCoordinates.Lon);
+                var weatherData = await _weatherService.GetWeatherByCoordinates(city, country);
 
                 return Ok(weatherData);
             }
