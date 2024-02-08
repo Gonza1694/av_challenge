@@ -4,6 +4,6 @@ namespace AmericaVirtualChallenge.Server.Services.Weather
 {
     public interface IWeatherService
     {
-        Task<WeatherResponse> GetWeatherByCoordinates(double lat, double lon);
+        Task<WeatherResponse> GetWeatherByCoordinates(string city, string country);
     }
 }

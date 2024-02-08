@@ -16,9 +16,11 @@ namespace AmericaVirtualChallenge.Server.Services.Weather
 
         }
 
-        public async Task<WeatherResponse> GetWeatherByCoordinates(double lat, double lon)
+        public async Task<WeatherResponse> GetWeatherByCoordinates(string city, string country)
         {
-            string apiUrl = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={_apiKey}&units=metric";
+            int forecastDays =5;
+            string apiUrl = $"https://api.weatherbit.io/v2.0/forecast/daily?city={city},{country}&days={forecastDays}&lang=es&key={_apiKey}";
+
             var httpClient = new HttpClient();
 
             var response = await httpClient.GetAsync(apiUrl);
