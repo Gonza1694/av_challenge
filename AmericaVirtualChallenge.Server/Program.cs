@@ -1,4 +1,3 @@
-using AmericaVirtualChallenge.Server.Services.Geocoding;
 using AmericaVirtualChallenge.Server.Services.Weather;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +10,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IWeatherService, WeatherService>();
-builder.Services.AddScoped<IGeocodingService, GeocodingService>();
 
 var app = builder.Build();
 
