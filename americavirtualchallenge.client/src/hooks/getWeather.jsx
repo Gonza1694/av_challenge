@@ -18,9 +18,7 @@ const useGetWeather = (fileName) => {
       } catch (error) {
         setError(error.message);
       } finally {
-        setTimeout(() => {
           setLoading(false);
-        }, 500)
       }
     };
 
