@@ -1,0 +1,105 @@
+@import "./global.scss";
+
+.App {
+  --bg-color: rgb(255, 255, 255);
+  --font-color: rgb(0, 0, 0);
+  --bg-light-color:rgb(15, 15, 15);
+
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: background-color 1s ease;
+  position: relative;
+
+  & * {
+    color: var(--font-color);
+  }
+
+  .notLoginContent {
+    min-height: 90vh;
+    display: grid;
+    place-content: center;
+  }
+}
+
+@media (min-width: 1380px) {
+  :root {
+    --global-margin: 0 11rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 1380px) {
+  :root {
+    --global-margin: 0 7rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --global-margin: 0 4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --global-margin: 0 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --global-margin: 0 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+section, footer {
+  & > div {
+    margin: var(--global-margin);
+  }
+}
+
+
+.isLoadingResourcesContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  z-index: 99;
+
+  img {
+    max-width: 10rem;
+  }
+}
+

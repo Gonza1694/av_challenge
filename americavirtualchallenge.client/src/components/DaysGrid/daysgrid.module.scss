@@ -1,0 +1,61 @@
+@import "../../global.scss";
+
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  min-height: 15rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 980px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  & > li {
+    min-height: 15rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+    p {
+      color: $steelblue;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.7rem;
+      letter-spacing: 0.2rem;
+    }
+    b {
+      position: relative;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+
+      span {
+        position: absolute;
+        top: 0.1rem;
+        margin-left: 0.2rem;
+        font-size: 0.6rem;
+      }
+    }
+    svg {
+      fill: $gray;
+      max-width: 4rem;
+      flex: 1;
+    }
+  }
+}
+
+.loading {
+  flex: 1;
+  display: grid;
+  place-content: center;
+  min-height: 6rem;
+
+  p {
+    font-size: 0.8rem;
+    color: $gray;
+  }
+}

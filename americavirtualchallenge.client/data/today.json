@@ -1,0 +1,17 @@
+{
+  "city": "San Miguel de Tucumán",
+  "country": "Argentina",
+  "date": "2024-02-07",
+  "weather": {
+    "description": "Soleado",
+    "main": "Sun", 
+    "temperatureCelsius": 35,
+    "temperatureFahrenheit": 77,
+    "humidity": 65,
+    "chance_of_rain": 20,
+    "wind": {
+      "speed": 10,
+      "direction": "Norte"
+    }
+  }
+}

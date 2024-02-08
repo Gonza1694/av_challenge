@@ -1,0 +1,48 @@
+@import "../../global.scss";
+
+.container {
+  min-height: 2rem;
+  display: flex;
+  padding: 0.2rem 0.6rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $citrine;
+  z-index: 9;
+  & b {
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-size: 1.3rem;
+    font-family: "Staatliches", sans-serif;
+  }
+}
+
+.loginButton {
+  background-color: transparent;
+  font-size: 0.6rem;
+  border: 2px solid $white;
+  padding: 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: $borderRadius;
+  min-width: 5.6rem;
+  cursor: pointer;
+  position: relative;
+
+  p {
+    order: 1;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  svg {
+    order: 2;
+    fill: $white;
+    max-width: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+}

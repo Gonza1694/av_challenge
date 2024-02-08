@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "dayOfWeek": "Lunes",
+    "main": "Sun",
+    "celsius": 25,
+    "fahrenheit": 77
+  },
+  {
+    "id": 2,
+    "dayOfWeek": "Martes",
+    "main": "Rain",
+    "celsius": 18,
+    "fahrenheit": 64
+  },
+  {
+    "id": 3,
+    "dayOfWeek": "Miércoles",
+    "main": "Cloud",
+    "celsius": 22,
+    "fahrenheit": 72
+  },
+  {
+    "id": 4,
+    "dayOfWeek": "Jueves",
+    "main": "Sun",
+    "celsius": 27,
+    "fahrenheit": 80
+  },
+  {
+    "id": 5,
+    "dayOfWeek": "Viernes",
+    "main": "Rain",
+    "celsius": 16,
+    "fahrenheit": 61
+  }
+]

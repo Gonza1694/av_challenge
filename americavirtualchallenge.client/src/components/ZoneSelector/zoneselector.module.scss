@@ -1,0 +1,63 @@
+@import "../../global.scss";
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+
+.formContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 0.7rem;
+    }
+    select {
+      padding: 0.4rem 0.5rem;
+      border-radius: $borderRadius;
+      border: 1px solid #ccc;
+
+      &:disabled {
+        color: #ccc;
+      }
+    }
+    span {
+      font-size: .6rem;
+      color: $red;
+    }
+  }
+
+  input[type="submit"] {
+    all: unset;
+    width: 100%;
+    background-color: $citrine;
+    text-align: center;
+    color: $white;
+    border-radius: $borderRadius;
+    padding: 0.2rem 0;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin: auto 0 0 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+
+.loading {
+  flex: 1;
+  display: grid;
+  place-content: center;
+
+  p {
+    font-size: 0.8rem;
+    color: $gray;
+  }
+}

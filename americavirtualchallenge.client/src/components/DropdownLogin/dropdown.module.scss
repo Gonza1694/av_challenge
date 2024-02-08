@@ -1,0 +1,61 @@
+@import "../../global.scss";
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  min-height: 5rem;
+  position: absolute;
+  background-color: white;
+  border-radius: $borderRadius;
+  padding: 1rem;
+  top: 1.5rem;
+  right: 2rem;
+  gap: 1rem;
+  z-index: 90;
+  box-shadow: 0 0 0.4rem #ccc;
+  cursor: auto;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 0.5rem;
+    }
+
+    input {
+      padding: 0.4rem 0.5rem;
+      border-radius: $borderRadius;
+      border: 1px solid #ccc;
+
+      &:disabled {
+        color: #ccc;
+      }
+    }
+ 
+  }
+
+
+  button {
+    background-color: $citrine;
+    color: $white;
+    font-size: 0.6rem;
+    border: 2px solid $white;
+    padding: 0.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: $borderRadius;
+    min-width: 5.6rem;
+    cursor: pointer;
+    position: relative;
+
+    &:nth-child(2){
+      background-color: red;
+    }
+  }
+}
+
+

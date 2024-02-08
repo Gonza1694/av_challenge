@@ -1,0 +1,18 @@
+@import "../../global.scss";
+
+.container {
+  min-height: 10rem;
+  overflow: hidden;
+  background-color: $columbia;
+
+  .gridContainer {
+    background-color: transparent;
+  }
+}
+
+
+.notlogin {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}

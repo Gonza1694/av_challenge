@@ -1,0 +1,20 @@
+{
+  "countries": [
+    {
+      "name": "Argentina",
+      "cities": ["Buenos Aires", "Córdoba", "Rosario"]
+    },
+    {
+      "name": "United States",
+      "cities": ["New York", "Los Angeles", "Chicago"]
+    },
+    {
+      "name": "United Kingdom",
+      "cities": ["London", "Manchester", "Edinburgh"]
+    },
+    {
+      "name": "Japan",
+      "cities": ["Tokyo", "Osaka", "Kyoto"]
+    }
+  ]
+}

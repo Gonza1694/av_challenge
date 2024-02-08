@@ -1,0 +1,92 @@
+@import "../../global.scss";
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+
+.weatherTodayContainer {
+  flex: 1;
+  display: flex;
+
+  & > div {
+    flex: 1;
+  }
+
+  small {
+    font-size: 0.6rem;
+    display: block;
+    color: $gray;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  h3 {
+    font-size: 0.8rem;
+    padding-left: 0.3rem;
+    margin-top: -0.6rem;
+  }
+  h4 {
+    font-size: 2rem;
+    padding: 0 0.2rem;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0.5rem;
+      margin-left: 0.2rem;
+      font-size: 1rem;
+    }
+  }
+  h5 {
+    font-size: 1rem;
+    padding: 0 0.2rem;
+    position: relative;
+
+    span {
+      position: absolute;
+      margin-left: 0.2rem;
+      font-size: 0.6rem;
+    }
+  }
+}
+.weatherIconContainer {
+  display: flex;
+  flex-direction: column;
+
+  & > div:first-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    
+    svg {
+      fill: $gray;
+      max-width: 6rem;
+    }
+  }
+  & > div:last-child {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 0.6rem;
+      text-align: right;
+    }
+  }
+}
+
+.loading {
+  flex: 1;
+  display: grid;
+  place-content: center;
+
+  p {
+    font-size: 0.8rem;
+    color: $gray;
+  }
+}

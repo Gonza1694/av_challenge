@@ -1,0 +1,21 @@
+@import "../../global.scss";
+
+.container {
+  background-color: #141414;
+  min-height: 2rem;
+  display: flex;
+  & > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  small {
+    color: $white;
+    font-size: 0.5rem;
+  }
+  p {
+    font-size: 0.5rem;
+    color: $white;
+  }
+}
