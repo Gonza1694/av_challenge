@@ -1,5 +1,5 @@
 ﻿using AmericaVirtualChallenge.Data.Models;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace AmericaVirtualChallenge.Server.Services.Weather
 {
@@ -29,13 +29,7 @@ namespace AmericaVirtualChallenge.Server.Services.Weather
 
                 try
                 {
-                    Console.WriteLine($"WEATHER JSON: {jsonString}");
-
-                    var weatherData = JsonSerializer.Deserialize<WeatherResponse>(jsonString,
-                        new JsonSerializerOptions()
-                        {
-                            PropertyNameCaseInsensitive = true
-                        });
+                    var weatherData = JsonConvert.DeserializeObject<WeatherResponse>(jsonString);
 
                     return weatherData;
 

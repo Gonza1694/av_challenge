@@ -1,4 +1,5 @@
 ﻿using AmericaVirtualChallenge.Data.Models;
+using Newtonsoft.Json;
 using System.Text.Json;
 
 namespace AmericaVirtualChallenge.Server.Services.Geocoding
@@ -30,15 +31,8 @@ namespace AmericaVirtualChallenge.Server.Services.Geocoding
 
                 try
                 {
-                    Console.WriteLine($"GEOCODING JSON: {jsonString}");
-
-                    var cities = JsonSerializer.Deserialize<List<GeocodingResponse>>(jsonString,
-                        new JsonSerializerOptions()
-                        {
-                            PropertyNameCaseInsensitive = true
-                        });
-
-                    var cityName = cities?.FirstOrDefault(c => c.Country == country.ToUpper());
+                    var geocodingResponse = JsonConvert.DeserializeObject<List<GeocodingResponse>>(jsonString);
+                    var cityName = geocodingResponse?.FirstOrDefault(c => c.Country == country.ToUpper());
 
                     if (cityName != null)
                     {
