@@ -8,7 +8,7 @@ const Header = ({ handleLogin }) => {
 
   return (
     <header className={styles.container}>
-      <b>Weather Challange</b>
+      <b>America Virtual</b>
       <LoginButton setOpenDropdown={setOpenDropdown}>
         {openDropdown && <DropdownLogin handleLogin={handleLogin} setOpenDropdown={setOpenDropdown} />}
       </LoginButton>

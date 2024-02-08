@@ -3,47 +3,52 @@ import styles from "./daysgrid.module.scss";
 import useGetFiveDaysWeather from "../../hooks/getFiveDaysWeather";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
-const DaysGrid = () => {
-  const { data, loading, error } = useGetFiveDaysWeather();
+const DaysGrid = ({ zone }) => {
 
-  useEffect(() => {
-    console.log({ data, loading, error });
+    const { countryValue, cityValue } = zone;
+    const { data, loading, error } = useGetFiveDaysWeather(cityValue, countryValue);
 
-    return () => {};
-  }, [data]);
+    useEffect(() => {
 
-  if (loading) {
+        console.log("DaysGrid : ", { data, loading, error });
+
+        return () => { };
+    }, [data, zone]);
+
+    if (loading) {
+        return (
+            <div className={styles.loading}>
+                <p>Cargando...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={styles.loading}>
+                <p>Error: {error}</p>
+            </div>
+        );
+    }
+
     return (
-      <div className={styles.loading}>
-        <p>Cargando...</p>
-      </div>
-    );
-  }
+        <ul className={styles.grid}>
+            {data.data && data.data.length > 0 ? (
+                data.data.slice(1).map((day, index) => (
+                    <li key={`day-${index + 1}`}>
+                        <p>{day.dayOfWeek ?? "Sin información"}</p>
+                        <WeatherIcon iconName={day.weather?.code ?? ""} />
+                        <b>{day.temperatureCelsius ?? "Sin información"} <span>°C</span></b>
+                        <b>{day.temperatureFahrenheit ?? "Sin información"} <span>°F</span></b>
+                    </li>
+                ))
+            ) : (
+                <li key="no-data">Sin información</li>
+            )}
+        </ul>
 
-  if (error) {
-    return (
-      <div className={styles.loading}>
-        <p>Error: {error}</p>
-      </div>
-    );
-  }
 
-  return (
-    <ul className={styles.grid}>
-      {data.map((day) => (
-        <li key={day.id}>
-          <p>{day.dayOfWeek}</p>
-          <WeatherIcon iconName={day.main} />
-          <b>
-            {day.celsius} <span>°C</span>
-          </b>
-          <b>
-            {day.fahrenheit} <span>°F</span>
-          </b>
-        </li>
-      ))}
-    </ul>
-  );
+    );
 };
 
 export default DaysGrid;
