@@ -12,8 +12,6 @@ const Today = ({ zone }) => {
 
     useEffect(() => {
 
-        console.log("TODAY : ", { data, loading, error });
-
         return () => { };
     }, [data, zone]);
 
