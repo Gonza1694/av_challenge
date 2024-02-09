@@ -5,7 +5,7 @@ import Column from "../Column/Column";
 import Title from "../Title/Title";
 
 const Hero = () => {
-    const [zone, setZone] = useState({ cityValue: '', countryValue: '' })
+    const [zone, setZone] = useState({ cityValue: 'Buenos Aires', countryValue: 'AR' })
 
     return (
         <section className={styles.container}>
