@@ -10,8 +10,6 @@ const DaysGrid = ({ zone }) => {
 
     useEffect(() => {
 
-        console.log("DaysGrid : ", { data, loading, error });
-
         return () => { };
     }, [data, zone]);
 

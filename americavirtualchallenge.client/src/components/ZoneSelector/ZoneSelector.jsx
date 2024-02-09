@@ -17,7 +17,7 @@ const ZoneSelector = ({ setZone }) => {
     const [whichCitiesToShow, setWhichCitiesToShow] = useState([]);
 
     const onSubmit = (data) => {
-        console.log({ countryValue, cityValue });
+
         setZone({ countryValue, cityValue })
     };
 

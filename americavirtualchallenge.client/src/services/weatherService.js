@@ -6,7 +6,6 @@ const weatherService = {
         try {
             const url = `${API_URL}/getWeather?city=${city}&country=${country}`;
             const response = await fetch(url);
-            console.log({response});
             if (!response.ok) {
                 throw new Error(`Error ${response.status}: ${response.statusText}`);
             }
